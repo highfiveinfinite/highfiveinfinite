@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+    <!--metas-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/HIGH.ico">
+    <title>HighFive Infinity</title>
+    <!--style-->
+    <style type="text/css">
+        body {
+            background-color: #0f0f0f;
+            margin-left: 0;
+            margin-right: 0;
+            overflow-x: hidden;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        /*TOPBAR*/
+        .topbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            padding: 0px;
+            background-color: transparent;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color:#00000035;
+            backdrop-filter: blur(30px) brightness(80%);
+            -webkit-backdrop-filter: blur(30px) brightness(80%);
+            -webkit-box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            z-index: 1;
+        }
+        #navItems {
+            display: inline-flex;
+            list-style: none;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: -20px;
+        }
+        #navItems a {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255, 195, 195);
+            transition-duration: 0.5s;
+        }
+        #topbarButton {
+            background-color: #ff9100;
+            padding: 5px;
+            border-radius: 3px;
+            border-style: solid;
+            border-color: #ff9100;
+            border-width: 1px;
+
+        }
+        #topbarButton:hover {
+            background-color: transparent;
+            border-style: solid;
+            border-color: rgb(139, 196, 110);
+        }
+        #navItems li {
+            padding: 20px;
+            text-align: center;
+        }
+        #logo {
+            display: inline;
+            vertical-align: middle;
+        }
+        #logo img {
+            height: 40px;
+            margin-left: 20px;
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        /*header_containers*/
+        header {
+            display: grid;
+        }
+        #headerContainer {
+            margin-top: 58px;
+        }
+        #leftBox {
+            float: left;
+            width: 25%;
+            height: 600px;
+            background-color: #0f0f0f;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #leftBox span {
+            color:rgb(255, 195, 195);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            margin-left: 50px;
+            animation-name: fadeInAppearFromLeft;
+            animation-duration: 3s;
+        }
+        #middleBox {
+            float: left;
+            width: 50%;
+            height: 600px;
+            background-color: #0f0f0f;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #middleBox img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            display: block;
+            height: 500px;
+            animation-name: fade_in_color_change;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            z-index: -1;
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        #rightBox {
+            float: right;
+            width: 25%;
+            height: 600px;
+            background-color: #0f0f0f;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #rightBox span{
+            color:rgb(255, 195, 195);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+            margin-right: 50px;
+            animation-name: fade_in;
+            animation-duration: 2s;
+        }
+        /*container_body*/
+        .main_section {
+        }
+        .bodyContainer1 {
+            background: url(img/img-site-brancohigh.png);
+            width: 100%;
+            height: 300px;
+        }
+        #textboxLeft {
+            float: left;
+            width: 40%;
+            height: 300px;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            margin-left: 400px;
+        }
+        #textboxRight {
+            float: right;
+            width: 40%;
+            height: 300px;
+            background-color: #ffffff;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            margin-right: 50px;
+        }
+        h2 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 20px;
+        }
+        .commomText {
+            font-family: 'Gantari', sans-serif;
+            font-size: 15px;
+            color: rgb(61, 61, 61);
+        }
+        /*second section*/
+        .second_section h2 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 20px;
+            color:#e5c5d1;
+        }
+        .second_section .commomText {
+            font-family: 'Gantari', sans-serif;
+            font-size: 15px;
+            color: rgb(199, 199, 199);
+        }
+        .bodyContainer2 {
+            background-image: linear-gradient(to right top, #3c689d, #7366a7, #a760a0, #ce5d88, #e36565);
+            width: 100%;
+            height: 400px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        #textbox2Left {
+            float: left;
+            width: 50%;
+            height: 400px;
+            background-color: #ffffff00;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            margin-left: 50px;
+        }
+        #textbox2Right {
+            float: left;
+            width: 50%;
+            height: 400px;
+            background-color: #ffffff;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            margin-left: 50px;
+        } 
+        #textbox2Right img {
+            height: 300px;
+            width: 300px;
+            margin-left: 30%;
+        }  
+        #rightBox span {
+            background-color: rgb(36, 36, 36);
+            padding: 10px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 2.5px;
+            margin-right: 200px;
+            -webkit-box-shadow: 0px 11px 29px -7px rgba(0,0,0,0.6);
+-moz-box-shadow: 0px 11px 29px -7px rgba(0,0,0,0.6);
+box-shadow: 0px 11px 29px -7px rgba(0,0,0,0.6);
+            
+        }
+        /*footer*/
+        .footer_content {
+            background-color: #000000;
+        }
+        #nameboxLeft {
+            float: left;
+            width: 25%;
+            height: 200px;
+            background-color: #000000;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #nameboxLeft p {
+            color:#f7a103;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 15px;
+            margin-left: 50px;
+        }
+        #footerboxMiddle {
+            float: left;
+            width: 50%;
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #footerboxMiddle p {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            color: #ffffff;
+        }
+        #footerboxRight {
+            float: right;
+            width: 25%;
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #footerboxRight a {
+            background-color: #000000;
+            border-width: 2px;
+            border-color: #f7a103;
+            border-style: double;
+            border-radius: 5px;
+            color: #f7a103;
+            padding: 10px;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 25%;
+            transition-duration: 1s;
+        }
+
+        .bodyContainerMiddle {
+            height: 500px;
+            background-image: url("img/fundoblack.png");
+        }
+
+        .bodyContainerMiddle1 {
+            height: 500px;
+            background-image: url("img/img-site-brancohigh.png");
+            margin-top: 3px;
+        }
+
+        .bodyContainerMiddle2 {
+            height: 500px;
+            background-image: url("img/fundoblack.png");
+            margin-top: 3px;
+        }
+
+        #textbox3Left {
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: #0f0f0f00;
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            text-align: ;
+        }
+        #textbox3Left h2 {
+            color:#c3cbd6;
+            font-family: 'Gantari', sans-serif;
+            margin-left: 30%;
+            margin-top: 150px;
+            width: 400px;
+        }
+        #textbox3Left p {
+            color:#c3cbd6;
+            margin-left: 30%;
+            font-family: 'Gantari', sans-serif;
+            width: 350px;
+            text-align: justify;
+        }
+        #imgbox3Right {
+            float: right;
+            width: 50%;
+            height: 500px;
+            background-image: url("img/gilsonbox1.png");     
+            background-repeat: no-repeat;
+            background-size: fit;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+            #imgbox4Right {
+            float: right;
+            width: 50%;
+            height: 500px;
+            background-image: url("img/carlosbox1.png");     
+            background-repeat: no-repeat;
+            background-size: fit;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+
+        #imgbox5Right {
+            float: right;
+            width: 50%;
+            height: 500px;
+            background-image: url("img/felipebox1.png");     
+            background-repeat: no-repeat;
+            background-size: fit;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        /*animations*/
+        #navItems a:hover {
+            color: rgb(240, 164, 0);
+        }
+        #footerboxRight a:hover {
+            background-color: #f7a103;
+            border-width: 2px;
+            border-color: #f7a103;
+            border-style: double;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 10px;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 25%;
+        }
+        @keyframes fadeInAppearFromTop {
+            from {
+                margin-top: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fadeInAppearFromRight {
+            from {
+                margin-right: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fadeInAppearFromLeft {
+            from {
+                margin-left: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fade_in {
+            from {
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fade_in_color_change {
+            0% {
+                filter: hue-rotate(10deg), blur(5px);
+                transform: rotate(0deg);
+            }
+            10% {
+                filter: hue-rotate(20deg) blur(10px);
+                transform: rotate(290deg);
+            }
+            20% {
+                filter: hue-rotate(70deg) blur(25px);
+                transform: rotate(200deg);
+            }
+            30& {
+                filter: hue-rotate(120deg);
+                transform: rotate(100deg);
+            }
+            40% {
+                filter: hue-rotate(200deg);
+                transform: rotate(50deg);
+            }
+            50% {
+                filter: hue-rotate(60deg) blur(15px);
+                transform: rotate(170deg);
+            }
+            60% {
+                filter: hue-rotate(70deg);
+                transform: rotate(30deg);
+            }
+            70% {
+                filter: hue-rotate(180deg) blur(10px);
+                transform: rotate(40deg);
+            }
+            80% {
+                filter: hue-rotate(90deg);
+                transform: rotate(0deg);
+            }
+            90% {
+                filter: hue-rotate(100deg) blur(30px);
+                transform: rotate(40deg);
+            }
+            100% {
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <nav>
+        <div id="logo">
+            <img src="img/Highfivewhite.png">
+        </div>
+        <ul id="navItems">
+            <li><a href="Pg1.html">INÍCIO</a></li>
+            <li><a href="Pg2.html">NOSSOS PRODUTOS</a></li>
+            <li><a href="Pg3.html">SOBRE NÓS</a></li>
+            <li><a id="topbarButton" link href="https://wa.me/+5516993945749">Mais informações</a></li>
+        </ul>
+    </nav>
+    </div>
+    <header>
+        <div id="headerContainer">
+            <div id="leftBox">
+                <span>QUEM<br>SOMOS<br>NÓS?<br>
+            </div>
+            <div id="middleBox">
+                <img src="img/Voice-icon.png">
+            </div>
+            <div id="rightBox">
+                <span>Somos uma equipe especializada para te ajudar com os nossos produtos.</span>
+            </div>
+        </div>
+    </header>
+    <section class="main_section">
+        <div class="bodyContainer1">
+            <div id="textboxLeft">
+                <h2 align="center">Nossa Equipe</h2>
+                <p class="commomText" align="center">Formada por três integrantes.
+                    <br>
+                    <br>
+                    Gilson Ribeiro "CEO".
+                     <br>
+                     
+                    Carlos Mazarão "Téc. em Programação e Edição de Vídeos".
+                     <br>
+                     
+                    Felipe Mazarão - "Téc. de Criação e Desenvolvimento".
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="middle_section">
+        <div class="bodyContainerMiddle">
+            <div id="textbox3Left">
+                <h2>Gilson Ribeiro - <i>CEO</i></h2>
+                <p>Gilson Ribeiro assume o papel de CEO na empresa HighFive Infinite, liderando a visão estratégica da empresa. Sua vasta experiência e visão empreendedora garantem que nossas operações estejam sempre alinhadas com as metas globais, impulsionando o sucesso de nossos clientes.</p>
+            </div>
+            <div id="imgbox3Right">
+            </div>
+        </div>
+    </section>
+    <section class="middle_section">
+        <div class="bodyContainerMiddle1">
+            <div id="textbox3Left">
+                <h2 style="color: #000000;">Carlos Mazarão - Técnico em Programação e Edição de Vídeo </h2>
+                <p style="color: #000000;">Carlos Mazarão destaca-se na HighFive Infinite ao desempenhar um papel crucial, combinando suas habilidades excepcionais em programação e edição de vídeos. Sua expertise técnica e criativa contribui significativamente para a excelência dos nossos serviços de Design, Edição de Vídeos, Social Media e Marketing Digital.</p>
+            </div>
+            <div id="imgbox4Right">
+            </div>
+        </div>
+    </section>
+    <section class="middle_section">
+        <div class="bodyContainerMiddle2">
+            <div id="textbox3Left">
+                <h2>Felipe Mazarão - Técnico de Criação e Desenvolvimento</h2>
+                <p>Felipe Mazarão é a peça-chave na HighFive Infinite, atuando com maestria como Técnico de Criação e Desenvolvimento. Sua capacidade única de unir criatividade e habilidades técnicas é fundamental para o sucesso de nossos serviços de Design, Edição de Vídeos, Social Media e Marketing Digital, elevando cada projeto a um patamar de excelência.</p>
+            </div>
+            <div id="imgbox5Right">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_content">
+            <div id="nameboxLeft">
+                <p> HIGHFIVE INFINITE
+                </p>
+            </div>
+            <div id="footerboxMiddle">
+                <p></p>
+                <p style="font-size: 10px;">Todas as imagens presentes no site foram feitas por Carlos Mazarão.</p>
+            </div>
+            <div id="footerboxRight">
+                <a link href="https://wa.me/+5516993945749">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
