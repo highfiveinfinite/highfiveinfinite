@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+    <!--metas-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/HIGH.ico">
+    <title>HighFive Infinity</title>
+    <!--style-->
+    <style type="text/css">
+        body {
+            background-color: #16181a;
+            margin-left: 0;
+            margin-right: 0;
+            overflow-x: hidden;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        /*TOPBAR*/
+        .topbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            padding: 0px;
+            background-color: transparent;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color:#00000035;
+            backdrop-filter: blur(30px) brightness(80%);
+            -webkit-backdrop-filter: blur(30px) brightness(80%);
+            -webkit-box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            box-shadow: 0px 10px 16px -14px rgba(0,0,0,0.75);
+            z-index: 1;
+        }
+        #navItems {
+            display: inline-flex;
+            list-style: none;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: -20px;
+        }
+        #navItems a {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(255, 195, 195);
+            transition-duration: 0.5s;
+        }
+        #topbarButton {
+            background-color: #ff9100;
+            padding: 5px;
+            border-radius: 3px;
+            border-style: solid;
+            border-color: #ff9100;
+            border-width: 1px;
+
+        }
+        #topbarButton:hover {
+            background-color: transparent;
+            border-style: solid;
+            border-color: rgb(157, 171, 124);
+        }
+        #navItems li {
+            padding: 20px;
+            text-align: center;
+        }
+        #logo {
+            display: inline;
+            vertical-align: middle;
+        }
+        #logo img {
+            height: 40px;
+            margin-left: 20px;
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        /*header_containers*/
+        header {
+            display: grid;
+        }
+        #headerContainer {
+            margin-top: 58px;
+        }
+        #leftBox {
+            float: left;
+            width: 25%;
+            height: 600px;
+            background-color: #16181a;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #leftBox span {
+            color:rgb(255, 255, 255);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            margin-left: 50px;
+            animation-name: fadeInAppearFromLeft;
+            animation-duration: 3s;
+        }
+        #middleBox {
+            float: left;
+            width: 50%;
+            height: 600px;
+            background-color: #16181a;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #middleBox img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            display: block;
+            height: 400px;
+            animation-name: fadeInAppearFromTop;
+            animation-duration: 1s;
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        #rightBox {
+            float: right;
+            width: 25%;
+            height: 600px;
+            background-color: #16181a;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            animation-name: color_change;
+            animation-duration: 2s;
+        }
+        #rightBox span{
+            color:rgb(255, 195, 195);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+            margin-right: 50px;
+            animation-name: fade_in;
+            animation-duration: 2s;
+        }
+        /*container_body*/
+        .main_section {
+        }
+        .bodyContainer1 {
+            background-image: url(img/img-site-brancohigh.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 700px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        h2 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 20px;
+        }
+        .commomText {
+            font-family: 'Gantari', sans-serif;
+            font-size: 15px;
+            color: rgb(61, 61, 61);
+        }
+
+        .bodyContainer2 {
+            background-image: linear-gradient(to right top, #3c689d, #7366a7, #a760a0, #ce5d88, #e36565);
+            width: 100%;
+            height: 800px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        /*footer*/
+        .footer_content {
+            background-color: #000000;
+        }
+        #nameboxLeft {
+            float: left;
+            width: 25%;
+            height: 200px;
+            background-color: #000000;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #nameboxLeft p {
+            color:#f7a103;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 15px;
+            margin-left: 50px;
+        }
+        #footerboxMiddle {
+            float: left;
+            width: 50%;
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #footerboxMiddle p {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            color: #ffffff;
+        }
+        #footerboxRight {
+            float: right;
+            width: 25%;
+            height: 200px;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #footerboxRight a {
+            background-color: #000000;
+            border-width: 2px;
+            border-color: #f7a103;
+            border-style: double;
+            border-radius: 5px;
+            color: #f7a103;
+            padding: 10px;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 25%;
+            transition-duration: 1s;
+        }
+        .leftBoxHalf {
+            float: left;
+            width: 50%;
+            height: 600px;
+            background-color: #16181a;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .rightBoxHalf { 
+            float: right;
+            width: 50%;
+            height: 600px;
+            background-color: #16181a;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        #textbox img {
+            height: 400px;
+            user-drag: none;
+            -webkit-user-drag: none;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        #textbox3 {
+            width: 400px;
+            margin-left: 25%;
+        }
+        #textbox3 h2 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 20px;
+            color:rgb(255, 195, 195);
+        }
+        #textbox3 p {
+            color:rgb(213, 175, 175);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 100;
+            font-size: 15px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+        }
+        #textbox3 a {
+            color:#59708d;
+            text-decoration: none;
+            padding: 7px;
+            border-style: solid;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Gantari', sans-serif;
+            transition-duration: 0.5s;
+        }
+        #textbox3 a:hover {
+            color:#16181a;
+            text-decoration: none;
+            padding: 7px;
+            border-style: solid;
+            border-color: #59708d;
+            background-color: #59708d;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Gantari', sans-serif;
+        }
+        .bodyContainerMiddle {
+            background-image: linear-gradient(to right top, #3c689d, #7366a7, #a760a0, #ce5d88, #e36565);
+            width: 100%;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            border-top-width: 2px;
+            border-top-color: #dddddd;
+            border-top-style: solid;
+        }
+
+        #textboxLeft {
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #textboxLeft p {
+            width: 50%;
+            text-align:justify;
+            margin-left: 25%;
+            font-family: 'Gantari', sans-serif;
+        }
+
+        #textboxLeft h2 {
+            text-shadow: #000000 1px 1px 1px;
+        }
+        #textboxMiddle {
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #textboxMiddle p {
+            width: 50%;
+            text-align:justify;
+            margin-left: 25%;
+            font-family: 'Gantari', sans-serif;
+        }
+
+        #textboxRight {
+            float: right;
+            width: 50%;
+            height: 500px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        #textboxRight p {
+            width: 50%;
+            text-align:justify;
+            margin-left: 25%;
+            font-family: 'Gantari', sans-serif;
+        }
+
+        #textboxRight h2 {
+            text-shadow: #000000 1px 1px 1px;
+        }
+
+        /*animations*/
+        #navItems a:hover {
+            color: rgb(240, 164, 0);
+        }
+        #footerboxRight a:hover {
+            background-color: #f7a103;
+            border-width: 2px;
+            border-color: #f7a103;
+            border-style: double;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 10px;
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 25%;
+        }
+        @keyframes fadeInAppearFromTop {
+            from {
+                margin-top: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fadeInAppearFromRight {
+            from {
+                margin-right: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fadeInAppearFromLeft {
+            from {
+                margin-left: -10px;
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes fade_in {
+            from {
+                opacity: 0.0;
+            }
+            to {
+                opacity: 1.0;
+            }
+        }
+        @keyframes color_change {
+            from {
+                background-color: #000000;
+            }
+            to {
+                background-color: #16181a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <nav>
+        <div id="logo">
+            <img src="img/Highfivewhite.png">
+        </div>
+        <ul id="navItems">
+            <li><a href="Pg1.html">INÍCIO</a></li>
+            <li><a href="Pg2.html">NOSSOS PRODUTOS</a></li>
+            <li><a href="Pg3.html">SOBRE NÓS</a></li>
+            <li><a id="topbarButton" link href="https://wa.me/+5516993945749">Mais informações</a></li>
+        </ul>
+    </nav>
+    </div>
+    <header>
+        <div id="headerContainer">
+            <div id="leftBox">
+                <span>Qualidade<br>Criatividade<br>Inovação</span>
+            </div>
+            <div id="middleBox">
+                <img src="img/61lado.png">
+            </div>
+            <div id="rightBox">
+                <span>Na HighFive, a inovação é nossa marca registrada.</span>
+            </div>
+        </div>
+    </header>
+    <section class="main_section">
+        <div class="bodyContainer1">
+            <div id="textbox">
+                <h2>Aprimoramos design, edição de vídeo e marketing digital com maestria, conectando-se elegantemente às últimas inovações do mercado contemporâneo.</h2>
+                <img src="img/artedivu.png">
+                <p class="commomText">Faça seu pedido através do nosso whatssap!
+                     <br>Para facilitar aperte no botão de "Mais Informações" na parte superior da Página.</p>
+            </div>
+        </div>
+    </section>
+    <section class="middleSection">
+        <dic class="bodyContainerMiddle">
+            <div id="textboxLeft">
+                <h2 style="color: rgb(245, 208, 0);">PLANO INICIANTE</h2>
+                <p class="commom_text">Dentro do nosso Plano Iniciante, será concedido o direito a um logotipo personalizado, quatro artes exclusivas, um vídeo com duração de um minuto, a criação do seu Facebook ou Instagram, e trinta refinados cartões de visita.
+                </p>
+            </div>
+            <div id="textboxMiddle">
+                <img src="img/PLANO INICIANTE.png" style="height: 400px; width: 400px; margin-left: 20%;">
+            </div>
+        </div>
+    </section>
+    <section class="middleSection">
+        <dic class="bodyContainerMiddle1">
+            <div id="textboxMiddle">
+                <img src="img/PLANO PRATA.png" style="height: 267px; width: 475px; margin-left: 20%;">
+            </div>
+            <div id="textboxRight">
+                <h2 style="color: rgb(100, 98, 98);">PLANO PRATA</h2>
+                <p class="commom_text">Dentro do nosso Plano Prata, será concedido o direito a um logotipo personalizado, seis artes exclusivas, dois vídeos de um minuto, criação das redes sociais, email comercial, publicação uma vez na semana, copy uma vez na semana, tráfego pago com saldo de R$20,00 e gerenciamento do facebook.</p>
+            </div>
+        </div>
+    </section>
+    </section>
+    <section class="middleSection">
+        <dic class="bodyContainerMiddle2">
+            <div id="textboxLeft">
+                <h2 style="color: rgb(255, 217, 0);">PLANO OURO</h2>
+                <p class="commom_text">Dentro do nosso Plano Ouro, será concedido o direito a um logotipo personalizado, identidade da empresa, dez artes exclusivas, quatro vídeos de um minuto, criação das redes sociais, email comercial, site básico, banner, publicações nas redes sociais em três dias da semana, copy três vezes na semana, tráfego pago com saldo de R$50,00, gerenciamento do instagram e Criação do MEI.</p>
+            </div>
+            <div id="textboxMiddle">
+                <img src="img/PLANO OURO.png" style="height: 400px; width: 400px; margin-left: 20%;">
+            </div>
+        </div>
+    </section>
+</section>
+<section class="middleSection">
+    <dic class="bodyContainerMiddle3">
+        <div id="textboxMiddle">
+            <img src="img/PLANO DIAMANTE.png" style="height: 267px; width: 475px; margin-left: 20%;">
+        </div>
+        <div id="textboxRight">
+            <h2 style="color: rgb(0, 255, 213)">PLANO DIAMANTE</h2>
+            <p class="commom_text">Dentro do nosso Plano Diamante, será concedido o direito a um logotipo personalizado, identidade da empresa, dezesseis artes exclusivas, oito vídeos de um minuto, criação das redes sociais, email comercial, site intermediário, publicações nas redes sociais, copy cinco vezes na semana, tráfego pago com saldo de R$100,00, gerenciamento das Redes Sociais, duzentos cartões de visita, uma faixa, criação do MEI, quatro contratos de serviços, Imposto de Renda PF e PS, Acessoria Jurídica, Contabilidade e Acessoria Tributária.</p>
+        </div>
+    </div>
+</section>
+</section>
+
+    <footer>
+        <div class="footer_content">
+            <div id="nameboxLeft">
+                <p> HIGHFIVE INFINITE
+                </p>
+            </div>
+            <div id="footerboxMiddle">
+                <p></p>
+                <p style="font-size: 10px;">Todas as imagens presentes no site foram feitas por Carlos Mazarão.</p>
+            </div>
+            <div id="footerboxRight">
+                <a link href="https://wa.me/+5516993945749">CONTATO</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
